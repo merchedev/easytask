@@ -1,43 +1,47 @@
-# EasyTask - Extensión de Visual Studio Code
+# EasyTask - Visual Studio Code Extension
 
-EasyTask es una extensión para Visual Studio Code que facilita la gestión de tareas dentro de tu proyecto.
+EasyTask is an extension for Visual Studio Code that facilitates task management within your project.
 
-## Características
+## Features
 
-- Encuentra y lista todas las tareas marcadas en tu proyecto.
-- Permite marcar las tareas como completadas directamente desde Visual Studio Code.
-- Proporciona enlaces directos a los archivos y líneas donde se encuentran las tareas.
+- Finds all the comments in your project starting with TODO, ignoring 'node_modules', '.git', 'out' and 'build' folders.
+- Lists them in a side view that appears when clicking the button with the extension icon on the activity bar.
+- Clicking on a task takes you to the corresponding file and line.
+- Accepted comments:
+ - Single line comments: `// # --`
+ - Block comments: `<!-- -->  /* */   ''' '''  """ """`
 
-## Instalación
 
-1. Abre Visual Studio Code.
-2. Ve a la pestaña de Extensiones (Ctrl+Shift+X).
-3. Busca "EasyTask" y haz clic en Instalar.
+## Installation
 
-## Uso
+1. Open Visual Studio Code.
+2. Go to the Extensions tab (Ctrl+Shift+X).
+3. Search for "EasyTask" and click Install.
 
-Puedes acceder a EasyTask de las siguientes maneras:
+## Usage
 
-- Haz clic en el botón "EasyTask" en la barra de actividades (Activity Bar) de Visual Studio Code.
-- Ejecuta el comando `EasyTask: Mostrar Tareas` desde la paleta de comandos (Ctrl+Shift+P).
+You can access EasyTask in the following ways:
 
-## Desarrollo
+- Click the "EasyTask" button on the Visual Studio Code Activity Bar.
+- Execute the command `EasyTask: Show Tasks` from the command palette (Ctrl+Shift+P).
 
-Si deseas contribuir al desarrollo de EasyTask, sigue estos pasos:
+## Development
 
-1. Clona este repositorio.
-2. Abre el proyecto en Visual Studio Code.
-3. Ejecuta `npm install` para instalar las dependencias.
-4. Ejecuta la extensión en modo de desarrollo con la tecla F5.
+If you wish to contribute to the development of EasyTask, follow these steps:
 
-## Contribuir
+1. Clone this repository.
+2. Open the project in Visual Studio Code.
+3. Run `npm install` to install dependencies.
+4. Run the extension in development mode with the F5 key.
 
-Si encuentras algún error o tienes alguna sugerencia, no dudes en abrir un issue o enviar un pull request.
+## Contributing
 
-## Créditos
+If you find any bugs or have any suggestions, feel free to open an issue or submit a pull request.
 
-EasyTask es mantenida por MercheDev.
+## Credits
 
-## Licencia
+EasyTask is maintained by MercheDev.
 
-Este proyecto está bajo la Licencia MIT. Consulta el archivo LICENSE.md para más detalles.
+## License
+
+This project is licensed under the MIT License. See the LICENSE.md file for more details.

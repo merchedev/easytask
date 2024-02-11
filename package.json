@@ -1,8 +1,8 @@
 {
   "name": "easytask",
   "displayName": "EasyTask",
-  "description": "Extensión para gestionar tareas dentro de un proyecto en Visual Studio Code.",
-  "version": "0.0.1",
+  "description": "EasyTask is an extension for Visual Studio Code that facilitates task management within your project.",
+  "version": "0.3.0",
   "engines": {
     "vscode": "^1.86.0"
   },
@@ -57,6 +57,10 @@
     "typescript": "^5.3.3",
     "@vscode/test-cli": "^0.0.4",
     "@vscode/test-electron": "^2.3.9"
+  },
+	"repository": {
+    "type": "git",
+    "url": "https://github.com/merchedev/easytask"
   }
 }
 
