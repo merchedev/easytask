@@ -3,6 +3,11 @@
 All notable changes to the "easytask" extension will be documented in this file.
 
 
+## [0.3.4] - 2024-02-11
+### Fixed:
+- Fixed an issue where comments containing "TODO" would cause text to be excluded from the output.
+- Fixed an issue where block comments were improperly terminated.
+
 ## [0.3.2] - 2024-02-11
 ### Added:
 - Added logo image to extension

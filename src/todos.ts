@@ -17,8 +17,11 @@ export function getCommentsOnCode(filePath:string) {
     //? Extract single line comments
     let match;
     let lineNumber = 0;
+		
     while ((match = singleLineCommentRegex.exec(code)) !== null) {
-				const commentText = match[0].trim().toLocaleLowerCase().split('todo')[1].trim();
+				const firstTodoIndex = match[0].trim().toLocaleLowerCase().indexOf('todo');
+				const commentText = match[0].substring(firstTodoIndex + 4).trim(); // Agrega 4 para omitir "TODO"
+				
         const lines = code.substring(0, match.index).split('\n');
         lineNumber = lines.length;
 
@@ -27,10 +30,12 @@ export function getCommentsOnCode(filePath:string) {
 
     //? Extract block comments
     while ((match = blockCommentRegex.exec(code)) !== null) {
-				const commentText = match[0].trim().toLocaleLowerCase().split('todo')[1].trim();
+				const firstTodoIndex = match[0].trim().toLocaleLowerCase().indexOf('todo');
+				const commentText = match[0].substring(firstTodoIndex + 4).trim(); 
+				const withoutEndOfBlock = commentText.replace(/([\s\S]-+->|\/\*\s*$|[\s\S]\*+\/|[\s\S]'''|[\s\S]""")/gi, '');
         const lines = code.substring(0, match.index).split('\n');
         lineNumber = lines.length + commentText.split('\n').length - 1;
-        comments.push({ file: filePath, line: lineNumber, text: commentText });
+        comments.push({ file: filePath, line: lineNumber, text: withoutEndOfBlock });
     }
 
     return comments;
