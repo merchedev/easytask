@@ -3,6 +3,10 @@
 All notable changes to the "easytask" extension will be documented in this file.
 
 
+## [0.3.2] - 2024-02-11
+### Added:
+- Added logo image to extension
+
 ## [0.3.1] - 2024-02-11
 ### Added:
 - Publisher to package.json
