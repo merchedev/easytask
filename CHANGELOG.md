@@ -3,6 +3,10 @@
 All notable changes to the "easytask" extension will be documented in this file.
 
 
+## [0.3.1] - 2024-02-11
+### Added:
+- Publisher to package.json
+
 ## [0.3.0] - 2024-02-11
 ### Changed
 - HTML structure
