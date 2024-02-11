@@ -3,7 +3,7 @@
   "displayName": "EasyTask",
 	"publisher": "MercheDev",
   "description": "EasyTask is an extension for Visual Studio Code that facilitates task management within your project.",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "engines": {
     "vscode": "^1.86.0"
   },
