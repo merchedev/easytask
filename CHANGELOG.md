@@ -3,6 +3,13 @@
 All notable changes to the "easytask" extension will be documented in this file.
 
 
+## [0.3.5] - 2024-02-12
+### Fixed:
+- Fixed an issue where comments containing ':' after TODO word would show up at the beginning of the message.
+
+## Changed:
+- The text of each task has been changed to display the relative path in the project instead of just the file name.
+
 ## [0.3.4] - 2024-02-11
 ### Fixed:
 - Fixed an issue where comments containing "TODO" would cause text to be excluded from the output.
