@@ -1,8 +1,8 @@
 import * as vscode from "vscode";
-import { SidebarProvider } from "./SidebarProvider";
+import { WebviewProvider } from "./WebviewProvider";
 
 export function activate(context: vscode.ExtensionContext) {
-	 	const sidebarProvider = new SidebarProvider(context.extensionUri);
+	 	const sidebarProvider = new WebviewProvider(context.extensionUri);
 		let disposable = vscode.window.registerWebviewViewProvider("easytask.webView", sidebarProvider);
     context.subscriptions.push(disposable);
 }

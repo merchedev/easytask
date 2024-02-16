@@ -7,6 +7,8 @@ EasyTask is an extension for Visual Studio Code that facilitates task management
 - Finds all the comments in your project starting with TODO, ignoring 'node_modules', '.git', 'out' and 'build' folders.
 - Lists them in a side view that appears when clicking the button with the extension icon on the activity bar.
 - Clicking on a task takes you to the corresponding file and line.
+- You can group by: none (default), files, folders.
+- You can refresh with the refresh button. you must save the file first.
 - Accepted comments:
  - Single line comments: `// # --`
  - Block comments: `<!-- -->  /* */   ''' '''  """ """`

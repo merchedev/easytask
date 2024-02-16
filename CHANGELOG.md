@@ -3,6 +3,12 @@
 All notable changes to the "easytask" extension will be documented in this file.
 
 
+## [0.4.0] - 2024-02-16
+### Added:
+- Added new button 'Group By'. Now you can group your tasks by: none (default), files, folders. It saves your choice on localStorage.
+### Changed:
+- Minimun required VSCode version is now 1.60.0 instead of 1.86.0
+
 ## [0.3.5] - 2024-02-12
 ### Fixed:
 - Fixed an issue where comments containing ':' after TODO word would show up at the beginning of the message.

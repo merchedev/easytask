@@ -36,6 +36,7 @@ header{
 	position:relative;
 	border: 1px solid var(--vscode-button-separator);
 	transition: all 0.3s ease;
+	padding-left: 4em;
 }
 .todo-button:after{
 	content:"";
@@ -78,10 +79,14 @@ header{
 .todo-text:first-letter {
 	text-transform: uppercase;
 }
-.icon{
+.todo-icon{
 	height: 3em;
 	fill: var(--vscode-editor-foreground);
-	margin-right: 0.5em;
+	/* margin-right: 0.5em; */
+	position:absolute;
+	left: 1.25em;
+	top: calc(50% - 1.5em);
+
 }
 .text-wrapper{
 	width: 100%;
@@ -97,7 +102,12 @@ header{
 	transition:all 0.2s ease-out;
 	z-index:-2;
 }
-.refresh-button{
+.buttons-wrapper{
+	display:flex;
+	gap:1em;
+
+}
+.icon-button{
 	font-family: inherit;
 	font-size: inherit;
 	hyphens: auto;
@@ -109,15 +119,117 @@ header{
 	border: none;
 	cursor: pointer;
 	transition: all 0.3s ease;
+	position:relative;
 }
 
-.refresh-icon{
+.icon-button__icon{
 	height: 2em;
 	width: auto;
 	fill: var(--vscode-editor-foreground);
 	transition: transform 0.2s ease-out;
 }
 
-.refresh-button:hover .refresh-icon{
+.icon-button:hover .icon-button__icon{
 	transform: rotate(45deg) scale(1.1);
+}
+
+
+
+
+
+
+
+/*=======================================================================================
+ *                                                                                      *
+ *                                      ACCORDION                                       *
+ *                                                                                      *
+ * =====================================================================================*/
+
+.accordion-title{
+	font-size:1.2em;
+	color: var(--vscode-editor-foreground);
+	line-height: 1.4em;
+	cursor:pointer;
+}
+
+.accordion-icon{
+	width: 1em;
+	fill: var(--vscode-editor-foreground);
+	padding: 0 0.5em;
+	transform: translateY(0.1em);
+	height: 1em;
+	object-fit: contain;
+}
+accordion-wc details > accordion-wc details{
+	margin-left:1em;
+}
+
+/*=======================================================================================
+ *                                                                                      *
+ *                                       DROPDOWN                                       *
+ *                                                                                      *
+ * =====================================================================================*/
+
+.dropdown-menu{
+	width:10em;
+	display:none;
+	position:absolute;
+	border-radius: 0.5em;
+	background-color:var(--vscode-dropdown-foreground);
+	left:50%;
+	transform:translateX(-50%);
+	z-index:2;
+}
+
+#group-by:hover .dropdown-menu{
+	display:block;
+}
+.dropdown-button-wrapper{
+	position:relative;
+}
+
+.dropdown-menu__title{
+	text-align: center;
+	border-bottom: 1px solid;
+	padding: 1em;
+	margin: 0;
+	color: var(--vscode-editor-background);
+	user-select: none;
+	text-transform: capitalize;
+}
+
+.dropdown__select-button{
+	padding: 1em;
+	padding-left: 2.2em;
+	width: 100%;
+	background: none;
+	box-shadow: none;
+	border: 0;
+	display: flex;
+	align-items: center;
+	position:relative;
+}
+.dropdown__check-icon{
+	height:1.2em;
+	display:none;
+	pointer-events: none;
+	position:absolute;
+	left:1em;
+	top: calc(50% - 0.6em);
+}
+.dropdown__span{
+	text-align: center;
+	width: calc(100% - 1.2em);
+}
+.dropdown__span::first-letter{
+	text-transform:capitalize;
+}
+.dropdown__select-button--selected .dropdown__check-icon{
+	display:block;
+}
+dropdown-select-button:last-of-type .dropdown__select-button{
+	border-radius: 0 0 0.5em 0.5em;
+}
+.dropdown__select-button:hover{
+	background-color: var(--vscode-dropdown-border);
 }

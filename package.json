@@ -2,11 +2,13 @@
   "name": "easytask",
   "displayName": "EasyTask",
 	"publisher": "MercheDev",
-  "description": "EasyTask is an extension for Visual Studio Code that facilitates task management within your project.",
-  "version": "0.3.5",
+  "description": "EasyTask is a Visual Studio Code extension that simplifies the process of reviewing all your TODO comments at a glance.",
+  "version": "0.4.0",
+	"author": "MercheDev",
+	"keywords": ["todo", "tasklist", "comments", "todo list", "tasks"],
 	"icon": "logo.png",
   "engines": {
-    "vscode": "^1.86.0"
+    "vscode": "^1.60.0"
   },
   "categories": [
     "Other"
@@ -19,7 +21,7 @@
             {
                 "id": "easytask-view",
                 "title": "EasyTask",
-                "icon": "./out/icon.svg"
+                "icon": "./media/icon.svg"
             }
         ]
     },
@@ -29,15 +31,15 @@
 								"type": "webview",
                 "id": "easytask.webView",
 								"name": "EasyTask List",
-								"icon": "./out/icon.svg"
+								"icon": "./media/icon.svg"
             }
 
         ]
     },
     "commands": [
       {
-        "command": "extension.mostrarTodoView",
-        "title": "Mostrar Tareas"
+        "command": "extension.showTodoView",
+        "title": "Show tasks"
     }
     ]
   },
@@ -50,7 +52,7 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.86.0",
+    "@types/vscode": "^1.60.0",
     "@types/mocha": "^10.0.6",
     "@types/node": "18.x",
     "@typescript-eslint/eslint-plugin": "^6.19.1",

@@ -27,7 +27,7 @@ export function getCommentsOnCode(filePath:string) {
         const lines = code.substring(0, match.index).split('\n');
         lineNumber = lines.length;
 
-        comments.push({ file: filePath, line: lineNumber, text: commentText });
+        comments.push({ 'file-path': filePath, 'file-line': lineNumber, message: commentText });
     }
 
     //? Extract block comments
@@ -38,7 +38,7 @@ export function getCommentsOnCode(filePath:string) {
 				const withoutEndOfBlock = commentText.replace(/([\s\S]-+->|\/\*\s*$|[\s\S]\*+\/|[\s\S]'''|[\s\S]""")/gi, '');
         const lines = code.substring(0, match.index).split('\n');
         lineNumber = lines.length + commentText.split('\n').length - 1;
-        comments.push({ file: filePath, line: lineNumber, text: withoutEndOfBlock });
+        comments.push({ 'file-path': filePath, 'file-line': lineNumber, message: withoutEndOfBlock });
     }
 
     return comments;
@@ -61,7 +61,7 @@ function searchThroughFiles(directory: string, fileList: string[] = []): string[
     return fileList;
 }
 
-export function findTodosInProject(): { file: string, line: number, text: string }[] {
+export function findTodosInProject():ToDo[] {
     const projectDir = vscode.workspace.rootPath;
 
     if (!projectDir) {
@@ -70,7 +70,7 @@ export function findTodosInProject(): { file: string, line: number, text: string
     }
 
     const files = searchThroughFiles(projectDir);
-    let todos: { file: string, line: number, text: string }[] = [];
+    let todos: ToDo[] = [];
 
     files.forEach(file => {
         const foundTodos = getCommentsOnCode(file);
