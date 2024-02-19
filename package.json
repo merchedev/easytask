@@ -3,7 +3,7 @@
   "displayName": "EasyTask",
 	"publisher": "MercheDev",
   "description": "EasyTask is a Visual Studio Code extension that simplifies the process of reviewing all your TODO comments at a glance.",
-  "version": "0.4.0",
+  "version": "0.4.1",
 	"author": "MercheDev",
 	"keywords": ["todo", "tasklist", "comments", "todo list", "tasks"],
 	"icon": "logo.png",

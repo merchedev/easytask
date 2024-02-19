@@ -62,7 +62,7 @@ function searchThroughFiles(directory: string, fileList: string[] = []): string[
 }
 
 export function findTodosInProject():ToDo[] {
-    const projectDir = vscode.workspace.rootPath;
+		const projectDir = vscode.workspace.workspaceFolders ? vscode.workspace.workspaceFolders[0].uri.fsPath : null;
 
     if (!projectDir) {
         vscode.window.showWarningMessage('No opened project found.');

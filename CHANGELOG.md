@@ -3,6 +3,10 @@
 All notable changes to the "easytask" extension will be documented in this file.
 
 
+## [0.4.1] - 2024-02-19
+### Fixed:
+- Fixed a bug where folders and file names would show up as 'undefined' in Windows sytems.
+
 ## [0.4.0] - 2024-02-16
 ### Added:
 - Added new button 'Group By'. Now you can group your tasks by: none (default), files, folders. It saves your choice on localStorage.

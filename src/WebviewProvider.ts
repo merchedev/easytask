@@ -1,5 +1,6 @@
 import * as vscode from "vscode";
 import { findTodosInProject } from "./todos";
+const path = require('path');
 
 
 export function getNonce() {
@@ -96,8 +97,8 @@ export class WebviewProvider implements vscode.WebviewViewProvider {
 
 		const { 'file-path': filePath } = todo;
 		const workspaceFolder         = vscode.workspace.workspaceFolders;
-		const splittedFileParts       = workspaceFolder ? filePath.split(workspaceFolder[0].uri.path): filePath;
-		const folders                 = splittedFileParts[1].split('/').filter(folder => folder.trim() !== ''); 
+		const splittedFileParts       = workspaceFolder ? filePath.split(workspaceFolder[0].uri.fsPath): filePath;
+		const folders                 = splittedFileParts[1].split(path.sep).filter(folder => folder.trim() !== ''); 
 		let currentFolder             = folderStructure;
 
 		for (const folder of folders) {
@@ -126,8 +127,8 @@ export class WebviewProvider implements vscode.WebviewViewProvider {
 
 		let content = '';
 		for (const key in fileGroups) {
-			const splittedFileParts = workspaceFolder ? key.split(workspaceFolder[0].uri.path) : key;
-			const fileName = splittedFileParts[1];
+			const splittedFileParts = workspaceFolder ? key.split(workspaceFolder[0].uri.fsPath) : key;
+			const fileName = splittedFileParts[1].startsWith(path.sep) ? splittedFileParts[1].substring(1) : splittedFileParts[1];
 			const els = fileGroups[key];
 
 			const todoLiEls = els.map(todo => this.getTodoEl(todo, true)).join('');
@@ -171,7 +172,7 @@ export class WebviewProvider implements vscode.WebviewViewProvider {
 		const workspaceFolder   = vscode.workspace.workspaceFolders;
 		const splittedText      = todo.message.split(/\/\/\s*TODO\b/g);
 		const todoText          = splittedText[splittedText.length - 1].trim();
-		const splittedFileParts = workspaceFolder ? todo['file-path'].split(workspaceFolder[0].uri.path) : todo['file-path'];
+		const splittedFileParts = workspaceFolder ? todo['file-path'].split(workspaceFolder[0].uri.fsPath) : todo['file-path'];
 		const fileName = hideName ? 'line' : splittedFileParts[1];
 
 		return /* HTML */ `
